@@ -3,7 +3,7 @@ import 'reflect-metadata';
 export type EntityTypeInstance<T> = new (...args: any[]) => T;
 
 export interface IEntity {
-    _id: string;
+    id: string;
     getPersistenceObject(): any;
 }
 

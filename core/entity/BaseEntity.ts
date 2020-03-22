@@ -8,7 +8,7 @@ import { IEntity } from './EntityFactory';
 export class BaseEntity implements IEntity {
 
     @ID
-    public _id: string;
+    public id: string;
 
     public getPersistenceObject(): any {
         const out = {};

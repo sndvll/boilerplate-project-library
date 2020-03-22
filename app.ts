@@ -1,9 +1,9 @@
 import { Server } from './core/Server';
 import fccTestingRoutes from './fcc/fcctesting';
 import helmet from 'helmet';
-import { MongoRepository } from './repo/MongoRepository';
 
 import Book from './entites/book';
+import {MongoRepository} from './core/repository/MongoRepository';
 
 const server = new Server('api')
     .setPort(3000)
@@ -15,7 +15,7 @@ const server = new Server('api')
         noSniff: true,
         xssFilter: true
       }))
-      .addEntity<Book>(Book, new MongoRepository<Book>('book'));
+      .addEntity<Book>(Book, new MongoRepository<Book>('', 'books'));
 
 fccTestingRoutes(server.app);
 
